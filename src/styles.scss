@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Urbanist', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.velt-inline-comments-section {
+	padding: 1rem 0px !important;
+}
+
+img {
+	user-select: none;
+	pointer-events: none;
+}
+
+// Variables
+:root {
+	color-scheme: light dark;
+
+	--dark-bg-0: rgba(255, 255, 255, 0.06);
+	--dark-bg-1: rgba(255, 255, 255, 0.08);
+	--dark-text-0: rgba(255, 255, 255, 0.44);
+	--dark-text-1: rgba(255, 255, 255, 0.8);
+
+	--light-bg-0: rgba(0, 0, 0, 0.02);
+	--light-bg-1: rgba(0, 0, 0, 0.04);
+	--light-text-0: rgba(0, 0, 0, 0.44);
+	--light-text-1: rgba(0, 0, 0, 0.8);
+
+}
+
+// Global styles
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	transition: background-color 150ms ease-in-out;
+}
+
+body {
+	background-color: light-dark(white, black);
+	color: light-dark(var(--light-text-0), var(--dark-text-0));
+}
+
+velt-notifications-tool {
+	div div app-notifications-tool-label {
+		display: none;
+	}
+}
+
+
+velt-comment-dialog-wireframe {
+	display: flex;
+	flex-direction: column;
+
+	velt-comment-dialog-header-wireframe {
+
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		justify-content: space-between;
+		border-bottom: 1px solid light-dark(var(--light-bg-1), var(--dark-bg-1));
+		padding: 0.15rem;
+
+		.actions {
+			display: flex;
+			flex-direction: row;
+			gap: 4px;
+			align-items: center;
+		}
+
+		app-comment-dialog-status-dropdown-trigger {
+			div {
+				background-color: light-dark(#FCFCFD, #141416);
+				border-radius: 0 !important;
+				border-right: 1px solid light-dark(var(--light-bg-1), var(--dark-bg-1));
+			}
+		}
+	}
+
+	app-comment-dialog-threads {
+		gap: 0 !important;
+		margin: 0.75rem 0;
+	}
+
+	app-comment-dialog-thread-card-avatar {
+		// This doesnt work - velt-comment-dialog-thread-card-avatar-wireframe
+
+		img {
+			background-color: #FEF97B;
+			border-radius: 8px !important;
+		}
+
+	}
+
+	.user-info {
+		display: flex;
+		align-items: baseline;
+		gap: 8px;
+
+		* {
+			height: fit-content;
+		}
+	}
+
+	.content-container {
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+		padding: 1rem 1.25rem;
+
+		.content {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.message-container {
+			.velt-thread-card--message {
+				padding: 0px;
+				margin: 0px;
+			}
+		}
+
+		.modal-author,
+		.s-emoji-block,
+		.velt-thread-card--reactions {
+			display: none;
+		}
+	}
+
+	app-comment-dialog-composer {
+		div {
+
+			.velt-composer--reply-div {
+				margin-top: 0.5rem !important;
+				border: none !important;
+				border-radius: 0 !important;
+				border-top: 1px solid #625DF5 !important;
+				padding: 0.5rem !important;
+			}
+		}
+
+		.velt-composer--submit-button {
+			div {
+				border-radius: 4px !important;
+			}
+		}
+
+	}
+}
+
+
+snippyly-comment-dialog {
+	.velt-comment-dialog {
+		overflow: hidden !important;
+		padding: 0 !important;
+
+		.velt-composer--actions-wrap {
+			padding-right: 0.75rem !important;
+		}
+	}
+
+	.velt-comment-dialog--no-comments {
+		app-comment-dialog-composer {
+
+			.velt-composer--reply-div,
+			.velt-composer--input-text-wrap {
+				border: none !important;
+				margin-top: 0 !important;
+			}
+
+
+			app-comment-dialog-composer-input {
+				align-items: center;
+				> div:first-child {
+					padding: 0 !important;
+					border: none !important;
+
+				}
+			}
+		}
+	}
+}
+
+app-comment-dialog-toggle-reply {
+	div {
+		padding-left: 0.5rem !important;
+		padding-bottom: 0.5rem !important;
+	}
+}
+
+app-comment-dialog-composer-input {
+	align-items: center;
+	> div:first-child {
+		padding: 0.25rem 0 !important;
+		border: none !important;
+	}
+}
+
+.velt-composer--line-div {
+	display: none !important;
+}
